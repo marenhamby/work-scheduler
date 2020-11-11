@@ -138,21 +138,24 @@
 
           $(".schedule-row").each(function(){
 
+            //add variable for each row to have a time quantity that can be compared to the current time
             var rowTime = parseInt($(this).attr("id"))
 
+            //set if statements to change the color of the description of a row depending on if it is before, during, or after the present hour of the user
             if (rowTime < currentTime) {
               console.log("before time");
               $(this).children(".description").addClass("past")
             }
 
             if(rowTime === currentTime) {
-              console.log("now")
+              console.log("now");
+              $(this).children(".description").addClass("present")
             }
 
             if (rowTime > currentTime) {
-              console.log("the future")
+              console.log("the future");
+              $(this).children(".description").addClass("future")
             }
-
 
           })
 
