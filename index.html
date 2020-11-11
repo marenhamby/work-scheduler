@@ -99,8 +99,6 @@
       // make sure the page has fully loaded before doing anything
       $(document).ready(function() {
 
-        console.log(parseInt(moment().format("H")))
-
         //add the current date and time information at the top of the page
         $("#currentDay").text(moment().format("dddd, Do MMMM YYYY, h:mm a"))
 
@@ -117,8 +115,6 @@
         $("#seventeen .description").val(localStorage.getItem("seventeen"))
 
 
-
-
         //add function for the save buttons to save the information for that row to local storage
         $(".saveBtn").on("click", function(){
 
@@ -133,9 +129,13 @@
         })
 
 
+        //add function to figure out the current time
 
+        // console.log(parseInt(moment().format("H")))
 
+        //add function to compare current time to the times on the chart and change the color format--already listed as classes in the css--according to what is current, past, and future
 
+        //run function about changing time
 
 
 
