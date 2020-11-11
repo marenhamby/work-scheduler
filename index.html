@@ -107,10 +107,14 @@
         //add function for the save buttons to save the information for that row to local storage
         $(".saveBtn").on("click", function(){
 
+          //add variable to pull the value of the task column from the row where the button was pressed so it can later be saved to local storage.
           var tasks = $(this).siblings(".description").val();
 
+          //add variable to pull the id of the row where the button was pressed so it can be saved with the value to local storage-- instead of setting static text as the key, then it's more specifically descriptive
+          var time = $(this).parent().attr("id");
 
-          localStorage.setItem("description", tasks)
+          //save the tasks to local storage with the key for the line it's from
+          localStorage.setItem(time, tasks)
         })
 
 
