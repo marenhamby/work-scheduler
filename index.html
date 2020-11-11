@@ -130,13 +130,32 @@
 
 
         //add function to figure out the current time
-
+        var currentTime = parseInt(moment().format("H"))
         // console.log(parseInt(moment().format("H")))
 
         //add function to compare current time to the times on the chart and change the color format--already listed as classes in the css--according to what is current, past, and future
+        function changeColor() {
+
+          for (var i=9; i < 17; i++) {
+            
+            if (i < currentTime) {
+              console.log("before time")
+            }
+
+            if(i === currentTime) {
+              console.log("now")
+            }
+
+            if (i > currentTime) {
+              console.log("the future")
+            }
+
+          }
+
+        }
 
         //run function about changing time
-
+        changeColor()
 
 
       })
