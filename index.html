@@ -104,6 +104,21 @@
         //add the current date and time information at the top of the page
         $("#currentDay").text(moment().format("dddd, Do MMMM YYYY, h:mm a"))
 
+
+        //add code to pull any existing saved text from local storage
+        $("#nine .description").val(localStorage.getItem("nine"))
+        $("#ten .description").val(localStorage.getItem("ten"))
+        $("#eleven .description").val(localStorage.getItem("eleven"))
+        $("#twelve .description").val(localStorage.getItem("twelve"))
+        $("#thirteen .description").val(localStorage.getItem("thirteen"))
+        $("#fourteen .description").val(localStorage.getItem("fourteen"))
+        $("#fifteen .description").val(localStorage.getItem("fifteen"))
+        $("#sixteen .description").val(localStorage.getItem("sixteen"))
+        $("#seventeen .description").val(localStorage.getItem("seventeen"))
+
+
+
+
         //add function for the save buttons to save the information for that row to local storage
         $(".saveBtn").on("click", function(){
 
