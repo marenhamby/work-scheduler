@@ -12,4 +12,4 @@ https://marenhamby.github.io/work-scheduler/
 
 ## Image
 Here is a screenshot of the page:
-![image](./assets/schedule_page_screenshot.PNG)
+![schedule page image](./assets/schedule_page_screenshot.PNG)
