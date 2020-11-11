@@ -36,55 +36,55 @@
     <div class="container">
       <!-- Timeblocks go here -->
       
-      <div id="nine" class="row justify-content-md-center border-top border-bottom calendar-row">
+      <div id="9" class="row justify-content-md-center border-top border-bottom schedule-row">
         <div class="col-sm-2">9:00am</div>
         <textarea rows="3" class="col-sm-9 description"></textarea>
         <button  class="col-sm-1 saveBtn"><i class="far fa-save"></i></button>
       </div>
 
-      <div id="ten" class="row justify-content-md-center border-top border-bottom calendar-row">
+      <div id="10" class="row justify-content-md-center border-top border-bottom schedule-row">
         <div class="col-sm-2">10:00am</div>
         <textarea rows="3" class="col-sm-9 description"></textarea>
         <button  class="col-sm-1 saveBtn"><i class="far fa-save"></i></button>
       </div>
 
-      <div id="eleven" class="row justify-content-md-center border-top border-bottom calendar-row">
+      <div id="11" class="row justify-content-md-center border-top border-bottom schedule-row">
         <div class="col-sm-2">11:00am</div>
         <textarea rows="3" class="col-sm-9 description"></textarea>
         <button  class="col-sm-1 saveBtn"><i class="far fa-save"></i></button>
       </div>
 
-      <div id="twelve" class="row justify-content-md-center border-top border-bottom calendar-row">
+      <div id="12" class="row justify-content-md-center border-top border-bottom schedule-row">
         <div class="col-sm-2">12:00am</div>
         <textarea rows="3" class="col-sm-9 description"></textarea>
         <button  class="col-sm-1 saveBtn"><i class="far fa-save"></i></button>
       </div>
 
-      <div id="thirteen" class="row justify-content-md-center border-top border-bottom calendar-row">
+      <div id="13" class="row justify-content-md-center border-top border-bottom schedule-row">
         <div class="col-sm-2">1:00pm</div>
         <textarea rows="3" class="col-sm-9 description"></textarea>
         <button  class="col-sm-1 saveBtn"><i class="far fa-save"></i></button>
       </div>
 
-      <div id="fourteen" class="row justify-content-md-center border-top border-bottom calendar-row">
+      <div id="14" class="row justify-content-md-center border-top border-bottom schedule-row">
         <div class="col-sm-2">2:00pm</div>
         <textarea rows="3" class="col-sm-9 description"></textarea>
         <button  class="col-sm-1 saveBtn"><i class="far fa-save"></i></button>
       </div>
 
-      <div id="fifteen" class="row justify-content-md-center border-top border-bottom calendar-row">
+      <div id="15" class="row justify-content-md-center border-top border-bottom schedule-row">
         <div class="col-sm-2">3:00pm</div>
         <textarea rows="3" class="col-sm-9 description"></textarea>
         <button  class="col-sm-1 saveBtn"><i class="far fa-save"></i></button>
       </div>
 
-      <div id="sixteen" class="row justify-content-md-center border-top border-bottom calendar-row">
+      <div id="16" class="row justify-content-md-center border-top border-bottom schedule-row">
         <div class="col-sm-2">4:00pm</div>
         <textarea rows="3" class="col-sm-9 description"></textarea>
         <button  class="col-sm-1 saveBtn"><i class="far fa-save"></i></button>
       </div>
 
-      <div id="seventeen" class="row justify-content-md-center border-top border-bottom calendar-row">
+      <div id="17" class="row justify-content-md-center border-top border-bottom schedule-row">
         <div class="col-sm-2">5:00pm</div>
         <textarea rows="3" class="col-sm-9 description"></textarea>
         <button  class="col-sm-1 saveBtn"><i class="far fa-save"></i></button>
@@ -104,15 +104,15 @@
 
 
         //add code to pull any existing saved text from local storage
-        $("#nine .description").val(localStorage.getItem("nine"))
-        $("#ten .description").val(localStorage.getItem("ten"))
-        $("#eleven .description").val(localStorage.getItem("eleven"))
-        $("#twelve .description").val(localStorage.getItem("twelve"))
-        $("#thirteen .description").val(localStorage.getItem("thirteen"))
-        $("#fourteen .description").val(localStorage.getItem("fourteen"))
-        $("#fifteen .description").val(localStorage.getItem("fifteen"))
-        $("#sixteen .description").val(localStorage.getItem("sixteen"))
-        $("#seventeen .description").val(localStorage.getItem("seventeen"))
+        $("#9 .description").val(localStorage.getItem("9"))
+        $("#10 .description").val(localStorage.getItem("10"))
+        $("#11 .description").val(localStorage.getItem("11"))
+        $("#12 .description").val(localStorage.getItem("12"))
+        $("#13 .description").val(localStorage.getItem("13"))
+        $("#14 .description").val(localStorage.getItem("14"))
+        $("#15 .description").val(localStorage.getItem("15"))
+        $("#16 .description").val(localStorage.getItem("16"))
+        $("#17 .description").val(localStorage.getItem("17"))
 
 
         //add function for the save buttons to save the information for that row to local storage
@@ -136,21 +136,25 @@
         //add function to compare current time to the times on the chart and change the color format--already listed as classes in the css--according to what is current, past, and future
         function changeColor() {
 
-          for (var i=9; i < 17; i++) {
-            
-            if (i < currentTime) {
-              console.log("before time")
+          $(".schedule-row").each(function(){
+
+            var rowTime = parseInt($(this).attr("id"))
+
+            if (rowTime < currentTime) {
+              console.log("before time");
+              $(this).children(".description").addClass("past")
             }
 
-            if(i === currentTime) {
+            if(rowTime === currentTime) {
               console.log("now")
             }
 
-            if (i > currentTime) {
+            if (rowTime > currentTime) {
               console.log("the future")
             }
 
-          }
+
+          })
 
         }
 
