@@ -101,11 +101,16 @@
 
         console.log(parseInt(moment().format("H")))
 
+        //add the current date and time information at the top of the page
         $("#currentDay").text(moment().format("dddd, Do MMMM YYYY, h:mm a"))
 
+        //add function for the save buttons to save the information for that row to local storage
         $(".saveBtn").on("click", function(){
 
+          var tasks = $(this).siblings(".description").val();
 
+
+          localStorage.setItem("description", tasks)
         })
 
 
