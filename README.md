@@ -8,6 +8,6 @@
 
 ## Link
     Here is a link to the deployed page:
-
+    https://marenhamby.github.io/work-scheduler/
 
 ## Image
